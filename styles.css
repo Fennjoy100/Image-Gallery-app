@@ -1,0 +1,50 @@
+/* Basic page and background to match the screenshot */
+:root{
+  --bg1: #f6e8e8;
+  --accent: #a7b9d9;
+  --card-border: #333;
+}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg,var(--bg1), #f2dede 60%);
+  color:#222;
+}
+.page-wrap{max-width:1100px;margin:0 auto;padding:24px 32px;}
+.top-bar{display:flex;align-items:flex-start;}
+.logo-pill{background:#000;color:#fff;padding:8px 14px;border-radius:8px;font-weight:700;margin-bottom:10px;}
+
+.main{padding-top:6px;text-align:center}
+.title{font-size:24px;margin:6px 0 0}
+.title-line{height:6px;width:360px;background:var(--accent);margin:12px auto 28px;border-radius:4px;opacity:0.9}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px 36px;
+  align-items:start;
+  justify-items:center;
+  padding:18px 24px 60px;
+}
+.card{width:180px;height:240px;background:#fff;padding:6px;box-sizing:border-box;border:4px solid rgba(0,0,0,0.25);}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* visual tweaks to mimic the framed photos */
+.card{box-shadow:0 4px 0 rgba(0,0,0,0.08), inset 0 0 0 2px rgba(255,255,255,0.15);}
+.card:hover{transform:translateY(-6px);transition:transform .18s ease}
+
+/* Responsive */
+@media (max-width:1000px){
+  .gallery{grid-template-columns:repeat(3,1fr);}
+  .card{width:160px;height:220px}
+}
+@media (max-width:720px){
+  .gallery{grid-template-columns:repeat(2,1fr);gap:28px}
+  .card{width:180px;height:260px}
+}
+@media (max-width:420px){
+  .page-wrap{padding:12px}
+  .gallery{grid-template-columns:repeat(1,1fr)}
+  .title-line{width:180px}
+}
